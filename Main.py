@@ -7,3 +7,4 @@ osszeg = szam1 + szam2
 
 # Eredmény megjelenítése
 print(f"A két szám összege: {osszeg}")
+#11
