@@ -1,10 +1,8 @@
-# Kérje be a két számot a felhasználótól
-szam1 = float(input("Kérem, adja meg az első számot: "))
-szam2 = float(input("Kérem, adja meg a második számot: "))
+import tkinter as tk
+from me_tehendo_app import METeendoApp
 
-# Számolja ki az összeget
-osszeg = szam1 + szam2
-
-# Eredmény megjelenítése
-print(f"A két szám összege: {osszeg}")
-#11
+# Alkalmazás indítása
+if __name__ == "__main__":
+    gyoker = tk.Tk()  # Létrehozzuk a fő Tkinter ablakot
+    app = METeendoApp(gyoker)  # Az alkalmazás létrehozása
+    gyoker.mainloop()  # A Tkinter fő ciklusának elindítása
