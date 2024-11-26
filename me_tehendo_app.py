@@ -1,5 +1,5 @@
 import tkinter as tk
-from me_fuggvenyek import me_teendo_hozzaadas, me_teendo_torles, me_teendok_mentese
+from me_fuggvenyek import me_teendo_hozzaadas, me_teendo_torles, me_teendok_mentese, me_teendok_beolvasasa
 
 class METeendoApp:
     def __init__(self, gyoker):
@@ -11,6 +11,9 @@ class METeendoApp:
 
         # Felhasználói felület létrehozása
         self.felulet_letrehozas()
+
+        # Teendők betöltése a fájlból
+        me_teendok_beolvasasa(self)
 
     def felulet_letrehozas(self):
         # Felhasználó név mező

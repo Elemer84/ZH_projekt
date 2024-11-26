@@ -1,6 +1,21 @@
 import os
 from tkinter import messagebox
 
+def me_teendok_beolvasasa(app):
+    """Teendők beolvasása fájlból."""
+    file_path = "teendok.txt"  # A fájl elérési útja
+    if os.path.exists(file_path):  # Csak akkor próbál beolvasni, ha a fájl létezik
+        try:
+            with open(file_path, "r", encoding="utf-8") as fajl:
+                for sor in fajl:
+                    sor = sor.strip()
+                    if ": " in sor:  # Ellenőrzi, hogy helyes-e a formátum
+                        felhasznalo, teendo = sor.split(": ", 1)
+                        app.teendok.append((felhasznalo, teendo))  # Adatok hozzáadása a listához
+                        app.teendo_lista.insert("end", f"{felhasznalo}: {teendo}")  # GUI frissítése
+        except Exception as e:
+            messagebox.showerror("Hiba", f"Nem sikerült a teendők beolvasása: {e}")  # Hiba esetén üzenet
+
 def me_teendo_hozzaadas(app):
     """Új teendő hozzáadása a listához."""
     uj_teendo = app.teendo_mezo.get()  # Az új teendő beviteli mező tartalma
