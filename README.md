@@ -1,2 +1,2 @@
-# ZH_projekt
-Script nyelvek projekt
+# meh
+Script nyelvek todo projekt
